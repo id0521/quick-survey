@@ -7,7 +7,7 @@ class Payments extends Component {
   render() {
     return (
       <StripeCheckout
-        name='Emaily'
+        name='QuickSurvey'
         description='$5 for 5 email credits'
         amount={500}
         token={token => this.props.handleToken(token)}
@@ -19,4 +19,7 @@ class Payments extends Component {
   }
 }
 
-export default connect(null, actions)(Payments);
+export default connect(
+  null,
+  actions
+)(Payments);

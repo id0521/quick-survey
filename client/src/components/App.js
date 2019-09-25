@@ -5,13 +5,13 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SurveyNew';
+import About from './About';
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchUser()
+    this.props.fetchUser();
   }
   render() {
     return (
@@ -22,6 +22,7 @@ class App extends Component {
             <Route exact path='/' component={Landing} />
             <Route exact path='/surveys' component={Dashboard} />
             <Route path='/surveys/new' component={SurveyNew} />
+            <Route path='/about' component={About} />
           </div>
         </BrowserRouter>
       </div>
@@ -29,4 +30,7 @@ class App extends Component {
   }
 }
 
-export default connect(null, actions)(App);
+export default connect(
+  null,
+  actions
+)(App);
